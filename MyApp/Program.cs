@@ -6,16 +6,27 @@ namespace MyApp
 {
     public class Program
     {
-
+        static readonly int[] data = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
 
         public static void Main(string[] args)
         {
-            int[] a = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
-            int n = a.Length;
+            
+            var spobject = new stats();
+            spobject.Numbers = data;
+            var Sum = spobject.Calculatesum();
+           
+            Console.WriteLine($"sum: {Sum}");
 
-            Console.Write("Mean = " + Assignment.FindMean(a, n) + "\n");
-            Console.Write("Median = " + Assignment.FindMedian(a, n) + "\n");
-            Console.Write("Median = " + Assignment.Findmode(a, n) + "\n");
+            var mean =spobject.Calculatemean();
+            Console.WriteLine($"Mean: {mean}");
+
+
+            var median= spobject.Calculatemedian();
+            Console.WriteLine($"Medain: {median}");
+
+            var mode = spobject.Calculatemedian();
+            Console.WriteLine($"Mode: {mode}");
+
 
         }
     }
